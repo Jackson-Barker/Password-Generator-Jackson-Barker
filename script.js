@@ -1,4 +1,5 @@
-// Variable Assignments
+//
+//  Variable Assignments
 //
 var generateBtn = document.querySelector("#generate");
 var storedPassword = [];
@@ -38,3 +39,28 @@ function writePassword() {
         storedPassword.push(i);
       }
     }
+    // special characters
+    if (character) {
+      for (let i = 33; i <= 126; i++) {
+        if (i <= 48 && i >= 57) {
+          continue;
+        }
+        if (i >= 65 && i >= 122) {
+          continue;
+        } else {
+          storedPassword.push(i);
+        }
+      }
+    }
+    for (i = 0; i < numberLength; i++) {
+      var randomChar = Math.floor(Math.random() * storedPassword.length);
+      finalPassword += String.fromCharCode(storedPassword[randomChar]);
+    }
+    alert(finalPassword);
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+    passwordText.value = password;
+  }
+}
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
