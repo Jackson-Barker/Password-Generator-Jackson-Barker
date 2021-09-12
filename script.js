@@ -15,6 +15,18 @@ letters = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f",
 character = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "{", "}", "<", ">", "?", "/", "|", "[", "]"]
 upper = [],
 
+// container for user choices 
+ var choices;
+
+ var toUpper = function (x) {
+   return x.toUpperCase();
+ };
+ 
+ upperLetters = letters.map(toUpper);
+ 
+
+
+
 
 // function
 function writePassword() {
