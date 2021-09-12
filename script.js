@@ -19,3 +19,22 @@ function writePassword() {
   var lowercase = confirm("Do you want to use lowercase letters?");
   var number = confirm("Do you want to use numbers?");
   var character = confirm("Do you want to use special characters?");
+
+  // uppercase, lowercase, and number functions
+  // uppercase
+  if (uppercase) {
+    for (let i = 65; i <= 90; i++) {
+      storedPassword.push(i);
+    }
+    // lowercase
+    if (lowercase) {
+      for (let i = 97; i <= 122; i++) {
+        storedPassword.push(i);
+      }
+    }
+    // number
+    if (number) {
+      for (let i = 0; i <= 9; i++) {
+        storedPassword.push(i);
+      }
+    }
