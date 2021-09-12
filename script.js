@@ -4,7 +4,7 @@ var pwlength;
 var number;
 var upperCase;
 var lowerCase;
-var character;
+var characters;
 
 
 
@@ -23,13 +23,14 @@ upper = [],
  };
  
  upperLetters = letters.map(toUpper);
- 
 
-
-
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
 // function
 function writePassword() {
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+number = confirm("Do you want numbers?")
+upperCase = confirm("Do you want upper case letters?")
+lowerCase = confirm("Do ypu want lower case letters?")
+characters = confirm("Do you want special characters?") 
