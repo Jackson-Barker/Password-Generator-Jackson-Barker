@@ -86,7 +86,8 @@ function writePassword() {
   pwlength = parseInt(
     prompt("How many characters do you want in your password? (8-128)")
   );
-
+  // 90- if "cancel" is hit at the prompt the "alert" is shown.
+  // 93- if desired length is not within the parameters the prompt will remind you of the requirements.
   if (!pwlength) {
     alert("This field is required");
   } else if (pwlength < 8 || pwlength > 128) {
@@ -105,6 +106,8 @@ function writePassword() {
     !confirm.lowerCase
   ) {
     choices = alert("You are required to chose at least one!");
+
+    //(4) else if for if user choses all 4 password variations.
   } else if (
     confirm.characters &&
     confirm.number &&
@@ -114,7 +117,7 @@ function writePassword() {
     choices = characters.concat(number, upperCase, lowerCase);
   }
 
-  // 3
+  //(3) else if for if user choses just 3 password variations.
   else if (confirm.characters && confirm.number && confirm.upperCase) {
     choices = characters.concat(number, upperCase);
   } else if (confirm.characters && confirm.number && confirm.lowerCase) {
@@ -125,7 +128,7 @@ function writePassword() {
     choices = number.concat(lowerCase, upperCase);
   }
 
-  // 2
+  //(2) else if for if user choses just 2 password variations.
   else if (confirm.characters && confirm.number) {
     choices = characters.concat(number);
   } else if (confirm.characters && confirm.lowerCase) {
@@ -140,7 +143,7 @@ function writePassword() {
     choices = number.concat(upperCase);
   }
 
-  // 1
+  //(1) else if for if user choses just 1 password variations.
   else if (confirm.characters) {
     choices = characters;
   } else if (confirm.number) {
@@ -149,7 +152,7 @@ function writePassword() {
     choices = lowerCase;
   }
 
-  // upp
+  // else if using the uppercase function
   else if (confirm.upperCase) {
     choices = upper.concat(upperCase);
   }
